@@ -36,18 +36,16 @@ function daysInBudget(budget, ratePerHour) {
 // Calculates the discounted rate for large projects, rounded up
 
 function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
-    const PER_DAY_RATE = dayRate(ratePerHour);
-    // const PER_DAY_RATE_AFTER_DISCOUNT = PER_DAY_RATE - 
-    const PRICE_PER_MONTH = RATE_OF_A_DAY * 22;
-    console.log("PRICE_PER_MONTH", PRICE_PER_MONTH);
-    const DIS = (PRICE_PER_MONTH / 100) * discount;
-    console.log("DIS", DIS);
-    const DISCOUNT_PRICE = Math.round(PRICE_PER_MONTH - DIS);
-    console.log("DISCOUNT_PRICE", DISCOUNT_PRICE);
-    const NUM_OF_MONTHS = numDays / 22;
-    const TOTAL_AMOUNT = Math.round(NUM_OF_MONTHS * DISCOUNT_PRICE);
+    const RATE_OF_A_DAY = dayRate(ratePerHour);
+    const DISCOUNT_RATE_OF_A_DAY = RATE_OF_A_DAY - (RATE_OF_A_DAY * discount)
+    const MONTHS = Math.floor(numDays / 22);
+    const MONTH_DISCOUNT_PRICE = DISCOUNT_RATE_OF_A_DAY * (MONTHS * 22)
+    const DAY_PRICE = RATE_OF_A_DAY * (numDays % 22);
+    const TOTAL_AMOUNT = Math.round(MONTH_DISCOUNT_PRICE + DAY_PRICE);
 
-    return TOTAL_AMOUNT;
+    return TOTAL_AMOUNT
 }
 
+dayRate(89);
+daysInBudget(20000, 89);
 priceWithMonthlyDiscount(89, 230, 0.42);
