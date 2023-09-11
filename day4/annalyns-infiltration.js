@@ -32,7 +32,7 @@ canExecuteFastAttack(knightIsAwake);
 // Task 2: Implement a function named canSpy that takes three boolean values, indicating if the knight, archer and the prisoner, respectively, are awake. 
 // The function returns true if the 'Spy' action is available based on the state of the characters. Otherwise, returns false:
 
-// const knightIsAwake = false;
+const knightIsAwake = false;
 const archerIsAwake = true;
 const prisonerIsAwake = false;
 canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
@@ -42,8 +42,8 @@ canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
 // Implement a function named canSignalPrisoner that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake. 
 // The function returns true if the 'Signal Prisoner' action is available based on the state of the characters. Otherwise, returns false:
 
-// const archerIsAwake = false;
-// const prisonerIsAwake = true;
+const archerIsAwake = false;
+const prisonerIsAwake = true;
 canSignalPrisoner(archerIsAwake, prisonerIsAwake);
 
 // Task 4: Check if the 'Free Prisoner' action is possible
@@ -53,8 +53,8 @@ canSignalPrisoner(archerIsAwake, prisonerIsAwake);
 // The function returns true if the 'Free Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence. 
 // Otherwise, it returns false:
 
-// const knightIsAwake = false;
-// const archerIsAwake = true;
-// const prisonerIsAwake = false;
+const knightIsAwake = false;
+const archerIsAwake = true;
+const prisonerIsAwake = false;
 const petDogIsPresent = false;
 canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent);
