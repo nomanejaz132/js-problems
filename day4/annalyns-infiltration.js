@@ -26,11 +26,19 @@
 // Implement a function named canExecuteFastAttack that takes a boolean value which indicates if the knight is awake.
 // This function returns true if the 'Fast Attack' action is available based on the state of the character. Otherwise, returns false:
 
+function canExecuteFastAttack(knightIsAwake) {
+    return !knightIsAwake
+}
+
 const knightIsAwake = true;
 canExecuteFastAttack(knightIsAwake);
 
 // Task 2: Implement a function named canSpy that takes three boolean values, indicating if the knight, archer and the prisoner, respectively, are awake. 
 // The function returns true if the 'Spy' action is available based on the state of the characters. Otherwise, returns false:
+
+function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
+    return knightIsAwake || archerIsAwake || prisonerIsAwake
+}
 
 const knightIsAwake = false;
 const archerIsAwake = true;
@@ -42,6 +50,10 @@ canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake);
 // Implement a function named canSignalPrisoner that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake. 
 // The function returns true if the 'Signal Prisoner' action is available based on the state of the characters. Otherwise, returns false:
 
+function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
+    return prisonerIsAwake && !archerIsAwake
+}
+
 const archerIsAwake = false;
 const prisonerIsAwake = true;
 canSignalPrisoner(archerIsAwake, prisonerIsAwake);
@@ -52,6 +64,15 @@ canSignalPrisoner(archerIsAwake, prisonerIsAwake);
 // archer and the prisoner, respectively, are awake. The last parameter indicates if Annalyn's pet dog is present. 
 // The function returns true if the 'Free Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence. 
 // Otherwise, it returns false:
+
+function canFreePrisoner(
+    knightIsAwake,
+    archerIsAwake,
+    prisonerIsAwake,
+    petDogIsPresent,
+) {
+    return (!knightIsAwake && !archerIsAwake && prisonerIsAwake && !petDogIsPresent) || (petDogIsPresent && !archerIsAwake)
+}
 
 const knightIsAwake = false;
 const archerIsAwake = true;
