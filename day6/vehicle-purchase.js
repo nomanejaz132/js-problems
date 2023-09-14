@@ -11,13 +11,7 @@
 // Implement the needsLicense(kind) function that takes the kind of vehicle and returns a boolean indicating whether you need a license for that kind of vehicle.
 
 function needsLicense(kind) {
-    if (kind === 'car') {
-        return true
-    } else if (kind === 'truck') {
-        return true
-    } else {
-        return false
-    }
+    return kind === 'car' || kind === 'truck'
 }
 
 needsLicense('car');
@@ -56,7 +50,7 @@ function calculateResellPrice(originalPrice, age) {
         return originalPrice - ((20 / 100) * originalPrice)
     } else if (age >= 3 && age <= 10) {
         return (70 / 100) * originalPrice
-    } else if (age >= 10) {
+    } else {
         return (50 / 100) * originalPrice
     }
 }
