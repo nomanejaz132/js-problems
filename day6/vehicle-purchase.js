@@ -51,6 +51,16 @@ chooseVehicle('Volkswagen Beetle', 'Volkswagen Golf');
 // (there are other ways if you want to practice). It takes the original price and the age of the vehicle as arguments and returns the estimated price 
 // in the dealership.
 
+function calculateResellPrice(originalPrice, age) {
+    if (age < 3) {
+        return originalPrice - ((20 / 100) * originalPrice)
+    } else if (age >= 3 && age <= 10) {
+        return (70 / 100) * originalPrice
+    } else if (age >= 10) {
+        return (50 / 100) * originalPrice
+    }
+}
+
 calculateResellPrice(1000, 1);
 calculateResellPrice(1000, 5);
 calculateResellPrice(1000, 15);
