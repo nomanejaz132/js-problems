@@ -92,3 +92,43 @@ ticketStatus(tickets, '23LA9T41');
 
 // the name of the visitor if the ticket was sold
 // 'invalid ticket !!!' if the ticket was not sold yet or the identifier was not found in the tracking object
+
+function simpleTicketStatus(tickets, ticketId) {
+    return tickets[ticketId] ?? 'invalid ticket !!!'
+}
+
+simpleTicketStatus(tickets, '23LA9T41');
+simpleTicketStatus(tickets, '0H2AZ123');
+simpleTicketStatus(tickets, 'RE90VAW7');
+
+// Task 5: Determine the version of terms and conditions
+
+// Due to new legal requirements, newly created visitor objects now also contain detailed information on the "General Terms & Conditions" (GTC) 
+// that the user agreed to. You can see an example of the new visitor object below.
+
+// The cashiers of the amusement park now need to check whether a visitor needs to sign a new version of the GTC. 
+// For this, implement a function gtcVersion that accepts a visitor object as an argument and returns the GTC version if it is available. 
+// If the version information is not available, nothing should be returned.
+
+function gtcVersion(visitor) {
+    return visitor?.gtc?.version;
+}
+
+const visitorNew = {
+    name: 'Verena Nardi',
+    age: 45,
+    ticketId: 'H32AZ123',
+    gtc: {
+        signed: true,
+        version: '2.1',
+    },
+};
+
+const visitorOld = {
+    name: 'Verena Nardi',
+    age: 45,
+    ticketId: 'H32AZ123',
+};
+
+gtcVersion(visitorNew);
+gtcVersion(visitorOld);
