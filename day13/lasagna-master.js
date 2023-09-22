@@ -108,3 +108,21 @@ console.log(myList);
 // The function should return a recipe object with the amounts needed for the desired number of portions. You want to keep the original recipe though. 
 // This means, in this task the recipe argument should not be modified.
 
+function scaleRecipe(recipe, portions) {
+  const newRecipe = {};
+  for (const property in recipe) {
+    newRecipe[property] = recipe[property] * (portions / 2)
+  }
+  return newRecipe
+}
+
+const recipe = {
+  noodles: 200,
+  sauce: 0.5,
+  mozzarella: 1,
+  meat: 100,
+};
+
+scaleRecipe(recipe, 4);
+
+console.log(recipe);
